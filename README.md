@@ -21,6 +21,11 @@ A Gutenberg block that showcases your WooCommerce categories in a responsive gri
 - One-click popup previews of category products
 - Works with any WooCommerce theme
 
+## Block Settings ##
+
+- **Categories to show:** Choose categories to display in block
+- **Categories per row:** Choose how many categories to display per row (1-6)
+
 ## Installation ##
 
 1. Upload the plugin files to the `/wp-content/plugins/woo-categories-grid-block` directory, or install the plugin through the WordPress plugins screen directly.
