@@ -58,13 +58,16 @@ export default function Edit( { attributes, setAttributes } ) {
 		<div { ...blockProps }>
 			<InspectorControls>
 				<PanelBody
-					title={ __( 'Carousel Settings', 'woo-categories-grid' ) }
+					title={ __(
+						'Carousel Settings',
+						'product-categories-grid-block'
+					) }
 				>
 					<RangeControl
 						__nextHasNoMarginBottom
 						label={ __(
 							'Categories per row',
-							'woo-categories-grid'
+							'product-categories-grid-block'
 						) }
 						value={ catsPerRow }
 						onChange={ ( value ) =>
@@ -76,7 +79,10 @@ export default function Edit( { attributes, setAttributes } ) {
 					/>
 				</PanelBody>
 				<PanelBody
-					title={ __( 'Select Categories', 'woo-categories-grid' ) }
+					title={ __(
+						'Select Categories',
+						'product-categories-grid-block'
+					) }
 					initialOpen={ false }
 				>
 					{ productCategories ? (
@@ -85,7 +91,7 @@ export default function Edit( { attributes, setAttributes } ) {
 							__next40pxDefaultSize={ true }
 							label={ __(
 								'Choose categories to show',
-								'woo-categories-grid'
+								'product-categories-grid-block'
 							) }
 							value={ selectedIds }
 							options={ categoryOptions }
@@ -101,7 +107,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						<p>
 							{ __(
 								'Loading categories &hellip;',
-								'woo-categories-grid'
+								'product-categories-grid-block'
 							) }
 						</p>
 					) }
@@ -191,7 +197,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					<p>
 						{ __(
 							'Please select category &hellip;',
-							'woo-categories-grid'
+							'product-categories-grid-block'
 						) }
 					</p>
 				) }

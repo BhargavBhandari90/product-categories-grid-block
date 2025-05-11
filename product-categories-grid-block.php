@@ -7,7 +7,7 @@
  * Author URI: https://biliplugins.com/
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: woo-categories-grid
+ * Text Domain: product-categories-grid-block
  * Requires Plugins: woocommerce
  *
  * @package Woo_Categories_Grid
@@ -82,7 +82,7 @@ function buntywp_cgw_block_styles() {
 		'buntywp/categories-grid',
 		array(
 			'name'         => 'dark-mode',
-			'label'        => __( 'Dark Mode', 'woo-categories-grid' ),
+			'label'        => __( 'Dark Mode', 'product-categories-grid-block' ),
 			'style_handle' => 'buntywp-categories-grid-style',
 		)
 	);
@@ -91,7 +91,7 @@ function buntywp_cgw_block_styles() {
 		'buntywp/categories-grid',
 		array(
 			'name'         => 'rosewater', // #E8B4B8.
-			'label'        => __( 'Rosewater', 'woo-categories-grid' ),
+			'label'        => __( 'Rosewater', 'product-categories-grid-block' ),
 			'style_handle' => 'buntywp-categories-grid-style',
 		)
 	);
@@ -100,7 +100,7 @@ function buntywp_cgw_block_styles() {
 		'buntywp/categories-grid',
 		array(
 			'name'         => 'navy-blue', // #000C66.
-			'label'        => __( 'Navy Blue', 'woo-categories-grid' ),
+			'label'        => __( 'Navy Blue', 'product-categories-grid-block' ),
 			'style_handle' => 'buntywp-categories-grid-style',
 		)
 	);
@@ -109,7 +109,7 @@ function buntywp_cgw_block_styles() {
 		'buntywp/categories-grid',
 		array(
 			'name'         => 'rose-red', // #AA1945.
-			'label'        => __( 'Rose Red', 'woo-categories-grid' ),
+			'label'        => __( 'Rose Red', 'product-categories-grid-block' ),
 			'style_handle' => 'buntywp-categories-grid-style',
 		)
 	);
@@ -118,7 +118,7 @@ function buntywp_cgw_block_styles() {
 		'buntywp/categories-grid',
 		array(
 			'name'         => 'teal-green', // #167D7F.
-			'label'        => __( 'Teal Green', 'woo-categories-grid' ),
+			'label'        => __( 'Teal Green', 'product-categories-grid-block' ),
 			'style_handle' => 'buntywp-categories-grid-style',
 		)
 	);
@@ -147,14 +147,18 @@ function buntywp_cgw_get_category_products() {
 	}
 
 	$args = array(
-		'post_type'      => 'product',
-		'posts_per_page' => 10,
-		'no_found_rows'  => true,
-		'tax_query'      => array(
+		'post_type'              => 'product',
+		'posts_per_page'         => 10,
+		'no_found_rows'          => true,
+		'fields'                 => 'ids',
+		'update_post_meta_cache' => false,
+		'update_post_term_cache' => false,
+		'tax_query'              => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 			array(
-				'taxonomy' => 'product_cat',
-				'field'    => 'term_id',
-				'terms'    => $category_id,
+				'taxonomy'         => 'product_cat',
+				'field'            => 'term_id',
+				'terms'            => $category_id,
+				'include_children' => false,
 			),
 		),
 	);

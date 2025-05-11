@@ -65,7 +65,7 @@
       ]
     }
   },
-  "textdomain": "woo-categories-carousel",
+  "textdomain": "product-categories-grid-block",
   "editorScript": "file:./index.js",
   "viewScriptModule": [
     "file:./view.js",

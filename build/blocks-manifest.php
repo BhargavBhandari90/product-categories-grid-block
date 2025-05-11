@@ -70,7 +70,7 @@ return array(
 				)
 			)
 		),
-		'textdomain' => 'woo-categories-carousel',
+		'textdomain' => 'product-categories-grid-block',
 		'editorScript' => 'file:./index.js',
 		'viewScriptModule' => array(
 			'file:./view.js',

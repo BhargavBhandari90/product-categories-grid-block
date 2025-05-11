@@ -72,11 +72,11 @@ $wrapper_attributes = get_block_wrapper_attributes(
 					<h2 data-wp-text="context.selectedCategoryName"></h2>
 				</div>
 				<div class="products-loading" data-wp-bind--hidden="!context.loading">
-					<?php esc_html_e( 'Loading products...', 'woo-categories-grid' ); ?>
+					<?php esc_html_e( 'Loading products...', 'product-categories-grid-block' ); ?>
 				</div>
 				<div class="products-grid" data-wp-bind--data-cat="context.selectedCategory" data-wp-bind--hidden="context.loading"></div>
 				<div class="bwp-category-link" data-wp-bind--hidden="context.loading">
-					<a class="view-product" href="#"><?php esc_html_e( 'Go to Category', 'woo-categories-grid' ); ?></a>
+					<a class="view-product" href="#"><?php esc_html_e( 'Go to Category', 'product-categories-grid-block' ); ?></a>
 				</div>
 			</div>
 		</div>

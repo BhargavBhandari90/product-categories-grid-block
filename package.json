@@ -1,5 +1,5 @@
 {
-	"name": "woo-categories-grid-block",
+	"name": "product-categories-grid-block",
 	"version": "1.0.0",
 	"description": "A Gutenberg block that displays WooCommerce categories in a grid with popup displaying products from the category.",
 	"author": "BuntyWP",
