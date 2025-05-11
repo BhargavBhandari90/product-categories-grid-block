@@ -30,7 +30,7 @@ A Gutenberg block that showcases your WooCommerce categories in a responsive gri
 4. Popup for products from the category
 
 == GitHub Repo ==
-[https://github.com/BhargavBhandari90/woo-categories-grid-block](https://github.com/BhargavBhandari90/woo-categories-grid-block)
+[https://github.com/BhargavBhandari90/product-categories-grid-block](https://github.com/BhargavBhandari90/product-categories-grid-block)
 
 == Changelog ==
 

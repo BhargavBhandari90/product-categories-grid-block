@@ -61,7 +61,7 @@ To format code, run:
 ## Found a Bug? ##
 
 If you find a bug, report here 
-[https://github.com/BhargavBhandari90/woo-categories-grid-block/issues](https://github.com/BhargavBhandari90/woo-categories-grid-block/issues)
+[https://github.com/BhargavBhandari90/product-categories-grid-block/issues](https://github.com/BhargavBhandari90/product-categories-grid-block/issues)
 
 ## Changelog ##
 
