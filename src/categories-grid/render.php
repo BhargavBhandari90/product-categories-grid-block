@@ -1,8 +1,8 @@
 <?php
 /**
- * Server-side rendering of the WooCommerce Categories Carousel block.
+ * Server-side rendering of the Product Categories Grid block.
  *
- * @package WooCommerce Categories Carousel
+ * @package Woo_Categories_Grid
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
