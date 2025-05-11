@@ -1,0 +1,25 @@
+.wp-block-buntywp-categories-grid {
+
+	.category-slide {
+		position: relative;
+
+		.bwp-upload-button,
+		.bwp-remove-button {
+			display: none;
+		}
+
+		&:hover {
+
+			.bwp-upload-button,
+			.bwp-remove-button {
+				display: block;
+			}
+		}
+
+		.bwp-action-button-container {
+			position: absolute;
+			display: flex;
+			gap: 1rem;
+		}
+	}
+}

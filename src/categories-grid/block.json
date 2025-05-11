@@ -1,0 +1,74 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "buntywp/categories-grid",
+	"version": "1.0.0",
+	"title": "Categories Grid for WooCommerce",
+	"category": "widgets",
+	"icon": "grid-view",
+	"description": "Display WooCommerce categories in a grid with popup with product loading.",
+	"supports": {
+		"html": false,
+		"interactivity": {
+			"clientNavigation": true
+		},
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"shadow": true,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"__experimentalBorder": {
+			"radius": true,
+			"color": true,
+			"width": true,
+			"style": true,
+			"__experimentalDefaultControls": {
+				"color": true,
+				"radius": true
+			}
+		}
+	},
+	"attributes": {
+		"catsPerRow": {
+			"type": "number",
+			"default": 3
+		},
+		"productCategories": {
+			"type": "array",
+			"default": []
+		}
+	},
+	"example": {
+		"attributes": {
+			"catsPerRow": "2",
+			"productCategories": [
+				{
+					"id": "1",
+					"name": "Cat 1"
+				},
+				{
+					"id": "2",
+					"name": "Cat 2"
+				},
+				{
+					"id": "3",
+					"name": "Cat 3"
+				},
+				{
+					"id": "4",
+					"name": "Cat 4"
+				}
+			]
+		}
+	},
+	"textdomain": "woo-categories-carousel",
+	"editorScript": "file:./index.js",
+	"viewScriptModule": [ "file:./view.js", "file:./interactivity.js" ],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

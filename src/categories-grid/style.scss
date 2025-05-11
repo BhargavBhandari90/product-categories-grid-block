@@ -1,0 +1,254 @@
+.wp-block-buntywp-categories-grid {
+
+	.wc-categories-wrapper {
+		display: grid;
+		grid-template-columns: repeat(var(--categories-per-row, 4), 1fr);
+		gap: 1rem;
+		width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
+
+		.category-slide {
+			padding: 1rem;
+			text-align: center;
+			cursor: pointer;
+			flex-shrink: 0;
+			border: 1px solid #ddd;
+			height: 10rem;
+			// max-width: 10rem;
+			justify-content: center;
+			display: flex;
+			align-items: center;
+			border-radius: 8px;
+
+			&:hover,
+			&.active {
+				background: rgb(0 0 0 / 5%);
+			}
+
+			img {
+				max-width: 100%;
+				height: auto;
+				border-radius: 8px;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+
+	/* Rosewater */
+	&.is-style-rosewater {
+		color: #fff;
+
+		.wc-categories-wrapper {
+
+			.category-slide {
+				background-color: #e8b4b8;
+				border: 1px solid #fff;
+
+				&:hover {
+					background: #e14552;
+				}
+			}
+		}
+	}
+
+	/* Navy Blue */
+	&.is-style-navy-blue {
+		color: #fff;
+
+		.wc-categories-wrapper {
+
+			.category-slide {
+				background-color: #000c66;
+				border: 1px solid #fff;
+
+				&:hover {
+					background: #0218c3;
+				}
+			}
+		}
+	}
+
+	/* Rose Red */
+	&.is-style-rose-red {
+		color: #fff;
+
+		.wc-categories-wrapper {
+
+			.category-slide {
+				background-color: #aa1945;
+				border: 1px solid #fff;
+
+				&:hover {
+					background: #97475f;
+				}
+			}
+		}
+	}
+
+	/* Teal Green */
+	&.is-style-teal-green {
+		color: #fff;
+
+		.wc-categories-wrapper {
+
+			.category-slide {
+				background-color: #167d7f;
+				border: 1px solid #fff;
+
+				&:hover {
+					background: #29d6d9;
+				}
+			}
+		}
+	}
+
+	/* dark mode */
+	&.is-style-dark-mode {
+		color: #fff;
+
+		.wc-categories-wrapper {
+
+			.category-slide {
+				background-color: #000;
+				border: 1px solid #fff;
+
+				&:hover {
+					background: rgb(0 0 0 / 80%);
+				}
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+
+		.wc-categories-wrapper {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.wc-products-modal {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.6);
+		justify-content: center;
+		align-items: center;
+		z-index: 9999;
+
+		&.open {
+			display: flex;
+		}
+
+		.wc-products-popup {
+			background: #fff;
+			padding: 2rem;
+			border-radius: 8px;
+			max-width: 90%;
+			max-height: 80%;
+			overflow-y: auto;
+			position: relative;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+			z-index: 10000;
+
+			.view-product {
+				display: inline-block;
+				padding: 0.5rem 1rem;
+				background: #2196f3;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 4px;
+				transition: background 0.2s ease;
+			}
+
+			.bwp-category-link {
+				text-align: center;
+			}
+		}
+	}
+
+	.wc-products-close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		background: none;
+		border: none;
+		font-size: 24px;
+		cursor: pointer;
+	}
+
+	.wc-products-backdrop {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.category-slide h4 {
+		margin: 0.5rem 0;
+		font-size: 1.2rem;
+	}
+
+	.category-slide p {
+		margin: 0;
+		font-size: 0.9rem;
+		color: #666;
+	}
+
+	.wc-categories-products {
+		margin-top: 2rem;
+	}
+
+	.products-loading {
+		text-align: center;
+		padding: 2rem;
+		font-size: 1.2rem;
+		color: #666;
+	}
+
+	.products-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.5rem;
+		padding: 1rem;
+
+		.product-card {
+			border: 1px solid #ddd;
+			border-radius: 8px;
+			padding: 1rem;
+			text-align: center;
+			transition: transform 0.2s ease;
+
+			img {
+				max-width: 100%;
+				height: auto;
+				border-radius: 4px;
+				margin-bottom: 1rem;
+			}
+
+			h3 {
+				margin: 0.5rem 0;
+				font-size: 1.1rem;
+			}
+
+			.price {
+				color: #e64a19;
+				font-weight: 700;
+				margin: 0.5rem 0;
+			}
+
+			.view-product:hover {
+				background: #1976d2;
+			}
+		}
+
+		.product-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+		}
+	}
+}
