@@ -33,7 +33,10 @@ A Gutenberg block that showcases your WooCommerce categories in a responsive gri
 3. Add/Edit post and search for "Categories Grid for WooCommerce" block
 
 ## Demo
-Coming Soon
+
+https://github.com/user-attachments/assets/7737397e-f68c-4840-8b44-879214410035
+
+
 
 ## Prerequisites
 - [Node/NPM](https://nodejs.org/en/download/)
