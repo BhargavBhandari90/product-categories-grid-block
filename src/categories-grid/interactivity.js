@@ -1,31 +1,33 @@
-import { store } from '@wordpress/interactivity';
+import { getContext, store } from '@wordpress/interactivity';
 
 store( 'buntywp/categories-grid', {
-	state: {
+	state: () => ( {
 		selectedCategory: null,
 		selectedCategoryName: null,
 		loading: false,
 		showProducts: false,
-	},
+	} ),
 	actions: {
 		async loadProducts( event ) {
+			console.log( 'loadProducts' );
+
+			const context = getContext();
+			const block = event.target.closest( '[data-wp-interactive]' );
 			const state = store( 'buntywp/categories-grid' ).state;
-			const categoryId =
-				event.target.closest( '.category-slide' ).dataset.categoryId;
-			const categoryName =
-				event.target.closest( '.category-slide' ).dataset.categoryName;
-			const productsGrid = document.querySelector( '.products-grid' );
-			const gridCategory = productsGrid.dataset.cat;
 
-			state.showProducts = true;
-			state.selectedCategory = categoryId;
-			state.selectedCategoryName = categoryName;
+			const categoryEl = event.target.closest( '.category-slide' );
+			const categoryId = categoryEl?.dataset.categoryId;
+			const categoryName = categoryEl?.dataset.categoryName;
+			const productsGrid = block.querySelector( '.products-grid' );
+			const gridCategory = productsGrid?.dataset.cat;
 
-			if ( gridCategory === categoryId ) {
-				return;
-			}
+			context.showProducts = true;
+			context.selectedCategory = categoryId;
+			context.selectedCategoryName = categoryName;
 
-			state.loading = true;
+			if ( gridCategory === categoryId ) return;
+
+			context.loading = true;
 			productsGrid.innerHTML = '';
 
 			try {
@@ -43,36 +45,40 @@ store( 'buntywp/categories-grid', {
 
 				const data = await response.json();
 
+				console.log( 'data', data );
+
 				if ( data.success ) {
 					productsGrid.innerHTML = data.data.products
 						.map(
 							( product ) => `
-                        <div class="product-card">
-                            <img src="${ product.image }" alt="${ product.title }" />
-                            <h3>${ product.title }</h3>
-                            <div class="price">${ product.price }</div>
-                            <a href="${ product.link }" class="view-product">View Product</a>
-                        </div>
-                    `
+							<div class="product-card">
+								<img src="${ product.image }" alt="${ product.title }" />
+								<h3>${ product.title }</h3>
+								<div class="price">${ product.price }</div>
+								<a href="${ product.link }" class="view-product">View Product</a>
+							</div>
+						`
 						)
 						.join( '' );
-					document
+
+					block
 						.querySelectorAll( '.bwp-category-link a' )
-						.forEach( ( el ) => {
-							el.setAttribute( 'href', data.data.category_link );
-						} );
+						.forEach( ( el ) =>
+							el.setAttribute( 'href', data.data.category_link )
+						);
 				}
 			} catch ( error ) {
-				return false;
+				console.error( 'Fetch error:', error );
 			} finally {
-				state.loading = false;
+				context.loading = false;
 			}
 		},
 		closeModal() {
-			const state = store( 'buntywp/categories-grid' ).state;
-			state.showProducts = false;
+			const context = getContext();
+			context.showProducts = false;
 		},
 	},
+
 	callbacks: {
 		watchCategories() {
 			window.addEventListener( 'keydown', ( event ) => {

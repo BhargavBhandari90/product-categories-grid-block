@@ -15,6 +15,8 @@ if ( empty( $product_categories ) ) {
 	return;
 }
 
+$unique_id = wp_unique_id( 'bwpcgw-' );
+
 $wrapper_attributes = get_block_wrapper_attributes(
 	array(
 		'class'               => 'wc-categories-carousel',
@@ -41,7 +43,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
 	);
 
 	?>
-	<div <?php echo wp_kses_data( $wrapper_attributes ); ?>>
+	<div <?php echo wp_kses_data( $wrapper_attributes ); ?> id="<?php echo esc_attr( $unique_id ); ?>">
 		<div class="wc-categories-wrapper">
 				<?php
 				foreach ( $product_categories as $category ) {
@@ -60,20 +62,20 @@ $wrapper_attributes = get_block_wrapper_attributes(
 		</div>
 		<div
 			class="wc-products-modal"
-			data-wp-class--open="state.showProducts"
+			data-wp-class--open="context.showProducts"
 		>
 			<div class="wc-products-backdrop" data-wp-on--click="actions.closeModal"></div>
 
 			<div class="wc-products-popup">
 				<button class="wc-products-close" data-wp-on--click="actions.closeModal">×</button>
 				<div class="bwp-cat-title">
-					<h2 data-wp-text="state.selectedCategoryName"></h2>
+					<h2 data-wp-text="context.selectedCategoryName"></h2>
 				</div>
-				<div class="products-loading" data-wp-bind--hidden="!state.loading">
+				<div class="products-loading" data-wp-bind--hidden="!context.loading">
 					<?php esc_html_e( 'Loading products...', 'woo-categories-grid' ); ?>
 				</div>
-				<div class="products-grid" data-wp-bind--data-cat="state.selectedCategory" data-wp-bind--hidden="state.loading"></div>
-				<div class="bwp-category-link" data-wp-bind--hidden="state.loading">
+				<div class="products-grid" data-wp-bind--data-cat="context.selectedCategory" data-wp-bind--hidden="context.loading"></div>
+				<div class="bwp-category-link" data-wp-bind--hidden="context.loading">
 					<a class="view-product" href="#"><?php esc_html_e( 'Go to Category', 'woo-categories-grid' ); ?></a>
 				</div>
 			</div>
