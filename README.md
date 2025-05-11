@@ -1,50 +1,61 @@
-# WooCommerce Categories Carousel Block
+# Product Categories Grid for WooCommerce #
+**Contributors:** [bhargavbhandari90](https://profiles.wordpress.org/bhargavbhandari90/)  
+**Donate link:** https://www.paypal.me/BnB90/20  
+**Tags:** block, woocommerce, category, grid, blocks  
+**Requires at least:** 6.6  
+**Tested up to:** 6.8  
+**Stable tag:** 1.0.0  
+**Requires PHP:** 7.4  
+**License:** GPLv2 or later  
+**License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
-A Gutenberg block that displays WooCommerce categories in a carousel with AJAX product loading. Built with the WordPress Interactivity API.
+Interactive category grid with product popups.
 
-## Features
+## Description ##
 
-- Responsive carousel display of WooCommerce product categories
-- Customizable number of categories per slide
-- Optional autoplay with configurable delay
-- AJAX loading of products when clicking on a category
-- Modern UI with smooth transitions
-- Built using the WordPress Interactivity API for optimal performance
+A Gutenberg block that showcases your WooCommerce categories in a responsive grid layout. Click any category to instantly view its products in a sleek popup—no page reload needed!
 
-## Requirements
+## Key Features ##
 
-- WordPress 6.4 or higher
-- WooCommerce 8.0 or higher
-- PHP 7.4 or higher
+- Responsive grid layouts (adjust columns)
+- One-click popup previews of category products
+- Works with any WooCommerce theme
 
-## Installation
+## Installation ##
 
-1. Upload the `woo-categories-carousel-block` folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Add the "WooCommerce Categories Carousel" block to your posts or pages using the block editor
+1. Upload the plugin files to the `/wp-content/plugins/woo-categories-grid-block` directory, or install the plugin through the WordPress plugins screen directly.
+2. Activate the plugin through the 'Plugins' screen in WordPress
+3. Add/Edit post and search for "CategoryCategories Grid for WooCommerce" block
+
+## Demo
+Coming Soon
+
+## Prerequisites
+- [Node/NPM](https://nodejs.org/en/download/)
+- [NVM](https://github.com/nvm-sh/nvm)
+
+## Development Setup
+1. Go to plugin's root
+2. Run `npm install`
+5. To watch for changes, run `npm start`
 
 ## Development
 
-1. Clone this repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start development server:
-   ```bash
-   npm start
-   ```
-4. Build for production:
-   ```bash
-   npm run build
-   ```
+To create a publish ready plugin, run:
 
-## Block Settings
+	npm run build
 
-- **Categories per slide**: Choose how many categories to display per slide (1-6)
-- **Enable autoplay**: Toggle automatic sliding of categories
-- **Autoplay delay**: Set the delay between slides when autoplay is enabled (1000-10000ms)
+To format code, run:
 
-## License
+	npm run format
 
-GPL v2 or later 
+
+## Found a Bug? ##
+
+If you find a bug, report here 
+[https://github.com/BhargavBhandari90/woo-categories-grid-block/issues](https://github.com/BhargavBhandari90/woo-categories-grid-block/issues)
+
+## Changelog ##
+
+### 1.0.0 ###
+* Initial Release.
