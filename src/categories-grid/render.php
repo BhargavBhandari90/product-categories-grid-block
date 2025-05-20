@@ -15,7 +15,7 @@ if ( empty( $product_categories ) ) {
 	return;
 }
 
-$unique_id = wp_unique_id( 'bwpcgw-' );
+$unique_id = wp_unique_id( 'buntywp_pcgw-' );
 
 $wrapper_attributes = get_block_wrapper_attributes(
 	array(
@@ -38,7 +38,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
 		'buntywp/categories-grid',
 		array(
 			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-			'nonce'   => wp_create_nonce( 'bwp_wcc_ajax_nonce' ),
+			'nonce'   => wp_create_nonce( 'buntywp_pcgb_ajax_nonce' ),
 		)
 	);
 

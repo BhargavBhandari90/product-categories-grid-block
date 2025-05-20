@@ -9,8 +9,6 @@ store( 'buntywp/categories-grid', {
 	} ),
 	actions: {
 		async loadProducts( event ) {
-			console.log( 'loadProducts' );
-
 			const context = getContext();
 			const block = event.target.closest( '[data-wp-interactive]' );
 			const state = store( 'buntywp/categories-grid' ).state;
@@ -37,7 +35,7 @@ store( 'buntywp/categories-grid', {
 						'Content-Type': 'application/x-www-form-urlencoded',
 					},
 					body: new URLSearchParams( {
-						action: 'wcc_get_category_products',
+						action: 'buntywp_pcgb_get_category_products',
 						nonce: state.nonce,
 						category_id: categoryId,
 					} ),

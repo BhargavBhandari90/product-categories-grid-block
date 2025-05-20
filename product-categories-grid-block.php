@@ -23,29 +23,29 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @package    Woo_Categories_Grid
  * @subpackage Main
  */
-if ( ! defined( 'BWPCGW_VERSION' ) ) {
+if ( ! defined( 'PCGB_VERSION' ) ) {
 	/**
 	 * The version of the plugin.
 	 */
-	define( 'BWPCGW_VERSION', '1.0.0' );
+	define( 'PCGB_VERSION', '1.0.0' );
 }
-if ( ! defined( 'BWPCGW_PATH' ) ) {
+if ( ! defined( 'PCGB_PATH' ) ) {
 	/**
 	 *  The server file system path to the plugin directory.
 	 */
-	define( 'BWPCGW_PATH', plugin_dir_path( __FILE__ ) );
+	define( 'PCGB_PATH', plugin_dir_path( __FILE__ ) );
 }
-if ( ! defined( 'BWPCGW_URL' ) ) {
+if ( ! defined( 'PCGB_URL' ) ) {
 	/**
 	 * The url to the plugin directory.
 	 */
-	define( 'BWPCGW_URL', plugin_dir_url( __FILE__ ) );
+	define( 'PCGB_URL', plugin_dir_url( __FILE__ ) );
 }
-if ( ! defined( 'BWPCGW_BASE_NAME' ) ) {
+if ( ! defined( 'PCGB_BASE_NAME' ) ) {
 	/**
 	 * The url to the plugin directory.
 	 */
-	define( 'BWPCGW_BASE_NAME', plugin_basename( __FILE__ ) );
+	define( 'PCGB_BASE_NAME', plugin_basename( __FILE__ ) );
 }
 
 /**
@@ -53,7 +53,7 @@ if ( ! defined( 'BWPCGW_BASE_NAME' ) ) {
  *
  * @return void
  */
-function buntywp_wcc_block_init() {
+function pcgb_block_init() {
 
 	if ( function_exists( 'wp_register_block_types_from_metadata_collection' ) ) {
 		wp_register_block_types_from_metadata_collection( __DIR__ . '/build', __DIR__ . '/build/blocks-manifest.php' );
@@ -69,14 +69,14 @@ function buntywp_wcc_block_init() {
 		register_block_type( __DIR__ . "/build/{$block_type}" );
 	}
 }
-add_action( 'init', 'buntywp_wcc_block_init' );
+add_action( 'init', 'pcgb_block_init' );
 
 /**
  * Register styles for the block.
  *
  * @return void
  */
-function buntywp_cgw_block_styles() {
+function buntywp_pcgb_block_styles() {
 
 	register_block_style(
 		'buntywp/categories-grid',
@@ -124,14 +124,14 @@ function buntywp_cgw_block_styles() {
 	);
 }
 
-add_action( 'wp_loaded', 'buntywp_cgw_block_styles' );
+add_action( 'wp_loaded', 'buntywp_pcgb_block_styles' );
 
 /**
  * AJAX handler for fetching products
  */
-function buntywp_cgw_get_category_products() {
+function buntywp_pcgb_get_category_products() {
 
-	check_ajax_referer( 'bwp_wcc_ajax_nonce', 'nonce' );
+	check_ajax_referer( 'buntywp_pcgb_ajax_nonce', 'nonce' );
 
 	$category_id = isset( $_POST['category_id'] ) ? intval( $_POST['category_id'] ) : 0;
 
@@ -140,7 +140,7 @@ function buntywp_cgw_get_category_products() {
 		return;
 	}
 
-	$response = get_transient( 'buntywp_wcc_category_products_' . $category_id );
+	$response = get_transient( 'pcgb_category_products_' . $category_id );
 	if ( $response ) {
 		wp_send_json_success( $response );
 		return;
@@ -186,11 +186,11 @@ function buntywp_cgw_get_category_products() {
 			'category_link' => get_category_link( $category_id ),
 		);
 
-		set_transient( 'buntywp_wcc_category_products_' . $category_id, $data, 6 * HOUR_IN_SECONDS );
+		set_transient( 'pcgb_category_products_' . $category_id, $data, 6 * HOUR_IN_SECONDS );
 
 	}
 
 	wp_send_json_success( $data );
 }
-add_action( 'wp_ajax_wcc_get_category_products', 'buntywp_cgw_get_category_products' );
-add_action( 'wp_ajax_nopriv_wcc_get_category_products', 'buntywp_cgw_get_category_products' );
+add_action( 'wp_ajax_buntywp_pcgb_get_category_products', 'buntywp_pcgb_get_category_products' );
+add_action( 'wp_ajax_nopriv_buntywp_pcgb_get_category_products', 'buntywp_pcgb_get_category_products' );
