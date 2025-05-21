@@ -15,6 +15,8 @@ Interactive category grid with product popups.
 
 A Gutenberg block that showcases your WooCommerce categories in a responsive grid layout. Click any category to instantly view its products in a sleek popup—no page reload needed!
 
+https://www.youtube.com/watch?v=FmA-sCR3vUU
+
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/woo-categories-grid-block` directory, or install the plugin through the WordPress plugins screen directly.
