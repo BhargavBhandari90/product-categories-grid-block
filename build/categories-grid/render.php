@@ -38,7 +38,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
 		'buntywp/categories-grid',
 		array(
 			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-			'nonce'   => wp_create_nonce( 'buntywp_pcgb_ajax_nonce' ),
+			'nonce'   => wp_create_nonce( 'pcgb_ajax_nonce' ),
 		)
 	);
 

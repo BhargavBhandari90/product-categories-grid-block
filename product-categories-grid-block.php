@@ -76,14 +76,14 @@ add_action( 'init', 'pcgb_block_init' );
  *
  * @return void
  */
-function buntywp_pcgb_block_styles() {
+function pcgb_block_styles() {
 
 	register_block_style(
 		'buntywp/categories-grid',
 		array(
 			'name'         => 'dark-mode',
 			'label'        => __( 'Dark Mode', 'product-categories-grid-block' ),
-			'style_handle' => 'buntywp-categories-grid-style',
+			'style_handle' => 'pcgb-style',
 		)
 	);
 
@@ -92,7 +92,7 @@ function buntywp_pcgb_block_styles() {
 		array(
 			'name'         => 'rosewater', // #E8B4B8.
 			'label'        => __( 'Rosewater', 'product-categories-grid-block' ),
-			'style_handle' => 'buntywp-categories-grid-style',
+			'style_handle' => 'pcgb-style',
 		)
 	);
 
@@ -101,7 +101,7 @@ function buntywp_pcgb_block_styles() {
 		array(
 			'name'         => 'navy-blue', // #000C66.
 			'label'        => __( 'Navy Blue', 'product-categories-grid-block' ),
-			'style_handle' => 'buntywp-categories-grid-style',
+			'style_handle' => 'pcgb-style',
 		)
 	);
 
@@ -110,7 +110,7 @@ function buntywp_pcgb_block_styles() {
 		array(
 			'name'         => 'rose-red', // #AA1945.
 			'label'        => __( 'Rose Red', 'product-categories-grid-block' ),
-			'style_handle' => 'buntywp-categories-grid-style',
+			'style_handle' => 'pcgb-style',
 		)
 	);
 
@@ -119,19 +119,19 @@ function buntywp_pcgb_block_styles() {
 		array(
 			'name'         => 'teal-green', // #167D7F.
 			'label'        => __( 'Teal Green', 'product-categories-grid-block' ),
-			'style_handle' => 'buntywp-categories-grid-style',
+			'style_handle' => 'pcgb-style',
 		)
 	);
 }
 
-add_action( 'wp_loaded', 'buntywp_pcgb_block_styles' );
+add_action( 'wp_loaded', 'pcgb_block_styles' );
 
 /**
  * AJAX handler for fetching products
  */
-function buntywp_pcgb_get_category_products() {
+function pcgb_get_category_products() {
 
-	check_ajax_referer( 'buntywp_pcgb_ajax_nonce', 'nonce' );
+	check_ajax_referer( 'pcgb_ajax_nonce', 'nonce' );
 
 	$category_id = isset( $_POST['category_id'] ) ? intval( $_POST['category_id'] ) : 0;
 
@@ -192,5 +192,5 @@ function buntywp_pcgb_get_category_products() {
 
 	wp_send_json_success( $data );
 }
-add_action( 'wp_ajax_buntywp_pcgb_get_category_products', 'buntywp_pcgb_get_category_products' );
-add_action( 'wp_ajax_nopriv_buntywp_pcgb_get_category_products', 'buntywp_pcgb_get_category_products' );
+add_action( 'wp_ajax_pcgb_get_category_products', 'pcgb_get_category_products' );
+add_action( 'wp_ajax_nopriv_pcgb_get_category_products', 'pcgb_get_category_products' );

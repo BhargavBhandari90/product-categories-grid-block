@@ -35,7 +35,7 @@ store( 'buntywp/categories-grid', {
 						'Content-Type': 'application/x-www-form-urlencoded',
 					},
 					body: new URLSearchParams( {
-						action: 'buntywp_pcgb_get_category_products',
+						action: 'pcgb_get_category_products',
 						nonce: state.nonce,
 						category_id: categoryId,
 					} ),
