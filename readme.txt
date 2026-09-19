@@ -3,7 +3,7 @@ Contributors:      bhargavbhandari90, biliplugins
 Donate link:       https://www.paypal.me/BnB90/20
 Tags:              block, woocommerce, category, grid, blocks
 Requires at least: 6.6
-Tested up to:      7.0
+Tested up to:      7.1
 Stable tag:        1.0.0
 License:           GPL-2.0-or-later
 Requires PHP:      7.4
@@ -19,7 +19,7 @@ https://www.youtube.com/watch?v=FmA-sCR3vUU
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/woo-categories-grid-block` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/product-categories-grid-block` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. Add/Edit post and search for "Categories Grid for WooCommerce" block
 
@@ -28,8 +28,8 @@ https://www.youtube.com/watch?v=FmA-sCR3vUU
 1. Search "Categories Grid for WooCommerce" Block
 2. Add "Categories Grid for WooCommerce" Block
 3. Settings for the block
-5. How it looks on frontend
-4. Popup for products from the category
+4. How it looks on frontend
+5. Popup for products from the category
 
 == GitHub Repo ==
 [https://github.com/BhargavBhandari90/product-categories-grid-block](https://github.com/BhargavBhandari90/product-categories-grid-block)

@@ -9,8 +9,10 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: product-categories-grid-block
  * Requires Plugins: woocommerce
+ * Requires at least: 6.6
+ * Requires PHP: 7.4
  *
- * @package Woo_Categories_Grid
+ * @package Product_Categories_Grid_Block
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Main file, contains the plugin metadata and activation processes
  *
- * @package    Woo_Categories_Grid
+ * @package    Product_Categories_Grid_Block
  * @subpackage Main
  */
 if ( ! defined( 'PCGB_VERSION' ) ) {

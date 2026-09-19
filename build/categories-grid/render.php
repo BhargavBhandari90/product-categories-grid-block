@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the Product Categories Grid block.
  *
- * @package Woo_Categories_Grid
+ * @package Product_Categories_Grid_Block
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

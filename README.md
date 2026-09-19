@@ -3,7 +3,7 @@
 **Donate link:** https://www.paypal.me/BnB90/20  
 **Tags:** block, woocommerce, category, grid, blocks  
 **Requires at least:** 6.6  
-**Tested up to:** 7.0  
+**Tested up to:** 7.1  
 **Stable tag:** 1.0.0  
 **Requires PHP:** 7.4  
 **License:** GPLv2 or later  
@@ -28,7 +28,7 @@ A Gutenberg block that showcases your WooCommerce categories in a responsive gri
 
 ## Installation ##
 
-1. Upload the plugin files to the `/wp-content/plugins/woo-categories-grid-block` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/product-categories-grid-block` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. Add/Edit post and search for "Categories Grid for WooCommerce" block
 
