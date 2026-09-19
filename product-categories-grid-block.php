@@ -182,15 +182,14 @@ function pcgb_get_category_products() {
 			);
 		}
 		wp_reset_postdata();
-
-		$data = array(
-			'products'      => $response,
-			'category_link' => get_category_link( $category_id ),
-		);
-
-		set_transient( 'pcgb_category_products_' . $category_id, $data, 6 * HOUR_IN_SECONDS );
-
 	}
+
+	$data = array(
+		'products'      => $response,
+		'category_link' => get_category_link( $category_id ),
+	);
+
+	set_transient( 'pcgb_category_products_' . $category_id, $data, 6 * HOUR_IN_SECONDS );
 
 	wp_send_json_success( $data );
 }

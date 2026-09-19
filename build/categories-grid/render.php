@@ -39,6 +39,9 @@ $wrapper_attributes = get_block_wrapper_attributes(
 		array(
 			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 			'nonce'   => wp_create_nonce( 'pcgb_ajax_nonce' ),
+			'i18n'    => array(
+				'viewProduct' => esc_html__( 'View Product', 'product-categories-grid-block' ),
+			),
 		)
 	);
 
