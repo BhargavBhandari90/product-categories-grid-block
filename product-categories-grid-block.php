@@ -138,7 +138,7 @@ function pcgb_get_category_products() {
 	$category_id = isset( $_POST['category_id'] ) ? intval( $_POST['category_id'] ) : 0;
 
 	if ( ! $category_id ) {
-		wp_send_json_error( 'Invalid category ID' );
+		wp_send_json_error( __( 'Invalid category ID.', 'product-categories-grid-block' ) );
 		return;
 	}
 
